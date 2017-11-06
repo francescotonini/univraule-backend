@@ -10,10 +10,10 @@ A seguire una breve documentazione sugli endpoint disponibili
 ```json
 [
 	{
-		“name”: “Nome corso”,
-		“academicYearId”: “{academicYearId}”,
-		“courseId”: “{courseId}”, 
-		“years”: [
+		"name": "Nome corso",
+		"academicYearId": "{academicYearId}",
+		"courseId": "{courseId}", 
+		"years": [
 			{
 				"name": "1 anno",
 				"year": "{courseYearId}"
@@ -29,7 +29,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 ```json
 [
 	{
-		“name”: “Nome lezione”,
+		"name": "Nome lezione",
 		"teacher": "Docente",
 		"room": "Aula",
 		"startTimestamp": 1509697617,
@@ -44,7 +44,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 ```json
 [
 	{
-		“name”: “Nome sede",
+		"name": "Nome sede",
 		"officeId": "{officeId}"
 	}
 ]
@@ -56,7 +56,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 ```json
 [
 	{
-		“name”: “Nome aula",
+		"name": "Nome aula",
 		"events": [
 			{
 				"name": "Nome evento",
