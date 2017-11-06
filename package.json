@@ -1,0 +1,40 @@
+{
+  "name": "univrorari-backend",
+  "version": "1.0.0",
+  "description": "Backend of univrorari-app",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=development node --inspect index.js | bistre",
+    "lint": "eslint lib",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- --opts ./test/mocha.opts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://francescotonini@github.com/francescotonini/univrorari-backend.git"
+  },
+  "keywords": [
+    "univr"
+  ],
+  "private": true,
+  "author": "Francesco Tonini <francescoantoniotonini@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/francescotonini/univrorari-backend/issues"
+  },
+  "homepage": "https://github.com/francescotonini/univrorari-backend#readme",
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.18.2",
+    "bole": "^3.0.2",
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "bistre": "^1.0.1",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.10.0"
+  }
+}
