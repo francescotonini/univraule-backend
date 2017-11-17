@@ -1,0 +1,7 @@
+
+pipeline:
+  build:
+    image: node:8.9.1-alpine
+    commands:
+      - npm install
+      - npm run lint
