@@ -1,12 +1,14 @@
 const bole   = require('bole');
 const config = require('./lib/config');
 const server = require('./lib/server.js');
+const opbeat = require('opbeat').start();
 
 // Initialize the logger
 bole.output([{ level: config('logLevel'), stream: process.stdout }]);
 
 const logger = bole('index');
 process.on('uncaughtException', (err) => {
+	opbeat.captureError(err);
 	logger.error(err);
 	process.exit(1);
 });
