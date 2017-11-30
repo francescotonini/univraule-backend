@@ -5,6 +5,6 @@ ENV REFRESHED_AT 2017-11-14
 COPY . /src
 RUN cd /src && npm install --production
 
-EXPOSE 4000
+EXPOSE 6000
 
 CMD ["node", "/src/index.js"]

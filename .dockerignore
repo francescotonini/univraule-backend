@@ -1,0 +1,9 @@
+node_modules
+coverage
+test
+.*
+mocha.opts
+Dockerfile
+README.md
+LICENSE.md
+lib/config/example.config.json
