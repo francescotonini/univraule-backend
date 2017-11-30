@@ -9,3 +9,5 @@ pipeline:
     repo: francescotonini/univrorari-backend
     tags: ${DRONE_COMMIT_SHA}
     secrets: [ docker_username, docker_password ]
+    when:
+      branch: master
