@@ -2,5 +2,10 @@
 	"logLevel": "debug",
 	"server": {
 		"port": 80
+	},
+	"redis": {
+		"host": "",
+		"port": 4000,
+		"cacheExpireInMinutes": 1
 	}
 }
