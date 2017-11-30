@@ -1,7 +1,11 @@
-
 pipeline:
-  build:
+  lint:
     image: node:8.9.1-alpine
     commands:
       - npm install
       - npm run lint
+  build:
+    image: plugins/docker
+    repo: francescotonini/univrorari-backend
+    tags: ${DRONE_COMMIT_SHA}
+    secrets: [ docker_username, docker_password ]
