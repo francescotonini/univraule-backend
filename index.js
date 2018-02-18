@@ -1,7 +1,6 @@
 const bole   = require('bole');
 const config = require('./lib/config');
 const server = require('./lib/server.js');
-const opbeat = require('opbeat').start();
 
 // Initialize the logger
 bole.output([{ level: config('logLevel'), stream: process.stdout }]);
