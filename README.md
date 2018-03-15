@@ -67,3 +67,15 @@ A seguire una breve documentazione sugli endpoint disponibili
 	}
 ]
 ```
+
+### Lista materie
+`GET /academicyear/{academicYearId}/course/{courseId}/year/{courseYearId}/teachings`
+
+```json
+[
+	{
+		"id": "id materia",
+		"name": "Nome materia",
+	}
+]
+```
