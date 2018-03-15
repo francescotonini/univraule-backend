@@ -7,7 +7,6 @@ bole.output([{ level: config('logLevel'), stream: process.stdout }]);
 
 const logger = bole('index');
 process.on('uncaughtException', (err) => {
-	opbeat.captureError(err);
 	logger.error(err);
 	process.exit(1);
 });
