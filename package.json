@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/francescotonini/univrorari-backend#readme",
   "dependencies": {
-    "async": "^2.5.0",
+    "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "bole": "^3.0.2",
     "compression": "^1.7.1",
