@@ -1,9 +1,9 @@
-FROM node:8.9.1-alpine
+FROM node:8.10.0-alpine
 MAINTAINER Francesco Tonini <francescoantoniotonini@gmail.com>
-ENV REFRESHED_AT 2017-11-14
+ENV REFRESHED_AT 2018-04-08
 
 COPY . /src
-RUN cd /src && npm install --production
+RUN cd /src && yarn install --prod
 
 EXPOSE 6000
 
