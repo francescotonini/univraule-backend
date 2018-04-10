@@ -45,7 +45,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 [
 	{
 		"name": "Nome sede",
-		"officeId": "{officeId}"
+		"id": "{officeId}"
 	}
 ]
 ```
