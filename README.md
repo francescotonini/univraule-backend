@@ -1,10 +1,8 @@
 # UniVR Orari - Backend
-Questa respository contiene il codice sorgente del backend di [UniVR Orari](https://github.com/francescotonini/univrorari-app)
+This repository contains the backend source code of [UniVR Orari](https://github.com/francescotonini/univrorari-app) and [UniVR Aule](https://github.com/francescotonini/univraule)
 
-## Documentazione endpoint
-A seguire una breve documentazione sugli endpoint disponibili
- 
-### Lista corsi
+## Endpoint documentation
+### Get all courses
 `GET /courses`
 
 ```json
@@ -23,7 +21,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 ]
 ```
 
-### Lista lezioni
+### Get lessons
 `GET /academicyear/{academicYearId}/course/{courseId}/year/{courseYearId}/lessons?[year={year}&month={month}]`
 
 ```json
@@ -38,7 +36,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 ]
 ```
 
-### Lista sedi
+### Get offices
 `GET /offices`
 
 ```json
@@ -50,7 +48,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 ]
 ```
 
-### Lista aule
+### Get rooms
 `GET /offices/{officeId}/rooms`
 
 ```json
@@ -68,7 +66,7 @@ A seguire una breve documentazione sugli endpoint disponibili
 ]
 ```
 
-### Lista materie
+### Get teachings
 `GET /academicyear/{academicYearId}/course/{courseId}/year/{courseYearId}/teachings`
 
 ```json
