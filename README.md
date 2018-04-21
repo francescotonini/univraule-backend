@@ -10,7 +10,7 @@ This repository contains the backend source code of [UniVR Orari](https://github
 	{
 		"name": "Nome corso",
 		"academicYearId": "{academicYearId}",
-		"courseId": "{courseId}", 
+		"id": "{courseId}", 
 		"years": [
 			{
 				"name": "1 anno",
