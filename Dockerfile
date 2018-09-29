@@ -1,4 +1,4 @@
-FROM node:8.11.1-alpine
+FROM node:8.12.0-alpine
 LABEL mantainer Francesco Tonini <francescoantoniotonini@gmail.com>
 ENV REFRESHED_AT 2018-09-18
 
