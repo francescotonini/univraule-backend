@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/francescotonini/univrorari-backend#readme",
   "dependencies": {
+    "alexa-verifier-middleware": "^1.0.1",
+    "async": "^2.6.1",
     "body-parser": "^1.18.2",
     "bole": "^3.0.2",
     "compression": "^1.7.1",
@@ -32,7 +34,6 @@
     "phin": "^2.9.2"
   },
   "devDependencies": {
-    "async": "^2.6.1",
     "bistre": "^1.0.1",
     "chai": "^4.2.0",
     "cross-env": "^5.1.1",
