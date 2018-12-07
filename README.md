@@ -1,5 +1,5 @@
 # UniVR Aule - Backend
-This repository contains the backend source code of [UniVR Aule](https://github.com/francescotonini/univraule-app-android) and [UniVR Aule Bot](https://github.com/francescotonini/univraule-bot)
+This repository contains the backend source code of [UniVR Aule](https://github.com/francescotonini/univraule-app-android), [UniVR Aule Bot](https://github.com/francescotonini/univraule-bot) and the Alexa Skill
 
 ## Endpoint documentation
 ### Get offices
