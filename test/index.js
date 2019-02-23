@@ -40,7 +40,7 @@ describe('API Tests', () => {
 				if (err) {
 					cb(err);
 					return;
-				};
+				}
 
 				res.body.should.be.a('array');
 				res.body.forEach((room) => {

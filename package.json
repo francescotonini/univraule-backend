@@ -4,7 +4,7 @@
   "description": "Backend of univraule-app-android and univraule-bot",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
+    "start": "yarn run dev",
     "dev": "cross-env NODE_ENV=development node --inspect index.js | bistre",
     "lint": "eslint lib",
     "test": "mocha --opts ./test/mocha.opts"
@@ -24,20 +24,19 @@
   },
   "homepage": "https://github.com/francescotonini/univrorari-backend#readme",
   "dependencies": {
-    "alexa-verifier-middleware": "^1.0.1",
-    "async": "^2.6.1",
+    "async": "^2.6.2",
     "body-parser": "^1.18.2",
     "bole": "^3.0.2",
     "compression": "^1.7.1",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
-    "phin": "^2.9.2"
+    "phin": "^3.3.0"
   },
   "devDependencies": {
     "bistre": "^1.0.1",
     "chai": "^4.2.0",
     "cross-env": "^5.1.1",
     "eslint": "^4.10.0",
-    "mocha": "^5.2.0"
+    "mocha": "^6.0.1"
   }
 }
