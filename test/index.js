@@ -1,7 +1,8 @@
-const assert = require('assert');
-const should = require('chai').should();
+const chai   = require('chai');
 const phin   = require('phin').unpromisified;
 const async  = require('async');
+
+chai.should();
 
 // const BASE_URL = process.env.BASE_URL || 'localhost:80';
 const BASE_URL = 'http://localhost:8080/v1';
@@ -92,7 +93,7 @@ describe('API Tests', () => {
 	it('Should return a timetable for year in each course', (done) => {
 		async.eachSeries(courses, (course, cb) => {
 			async.eachSeries(course['years'], (year, cb) => {
-				let url = `${BASE_URL}/academicyearid/${course['academicYearId']}/course/${course['id']}/year/${year['id']}/lessons`;
+				let url = `${BASE_URL}/academicyear/${course['academicYearId']}/course/${course['id']}/year/${year['id']}/lessons`;
 				console.log(`Processing ${url}`);
 	
 				phin({
