@@ -1,5 +1,4 @@
 const pino   = require('pino')();
-const config = require('./lib/config');
 const server = require('./lib/server.js');
 
 process.on('uncaughtException', (err) => {
@@ -8,7 +7,7 @@ process.on('uncaughtException', (err) => {
 });
 
 // Starts the server
-let port = process.env.PORT || config(['server', 'port']) || 8080;
+let port = process.env.PORT || 8080;
 server.listen(port, () => {
-	pino.info(`Listening on port ${config(['server', 'port'])}`);
+	pino.info(`Listening on port ${port}`);
 });
