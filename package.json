@@ -1,10 +1,10 @@
 {
   "name": "univrorari-backend",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Backend of univraule-app-android and univraule-bot",
   "main": "index.js",
   "scripts": {
-    "start": "yarn run dev",
+    "start": "node index.js",
     "dev": "cross-env NODE_ENV=development node --inspect index.js | pino-pretty",
     "lint": "eslint lib",
     "test": "mocha --opts ./test/mocha.opts"
