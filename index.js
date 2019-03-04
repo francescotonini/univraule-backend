@@ -8,6 +8,7 @@ process.on('uncaughtException', (err) => {
 });
 
 // Starts the server
-server.listen(config(['server', 'port']), () => {
+let port = process.env.PORT || config(['server', 'port']) || 8080;
+server.listen(port, () => {
 	pino.info(`Listening on port ${config(['server', 'port'])}`);
 });
