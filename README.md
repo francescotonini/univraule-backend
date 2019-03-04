@@ -65,3 +65,20 @@ This repository contains the backend source code of [UniVR Orari](https://github
 	}
 ]
 ```
+
+### Get teachings
+`GET /academicyear/{academicYearId}/course/{courseId}/teachings`
+
+```json
+[
+    {
+        "id": "999|1",
+        "teachings": [
+			{
+				"id": "EC111111",
+				"name": "Analisi matematica I"
+			}
+		]
+	}
+]
+```
