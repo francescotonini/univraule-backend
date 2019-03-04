@@ -4,8 +4,7 @@ const async  = require('async');
 
 chai.should();
 
-// const BASE_URL = process.env.BASE_URL || 'localhost:80';
-const BASE_URL = 'http://localhost:8080/v1';
+const BASE_URL = process.env.BASE_URL || 'localhost:8080';
 
 describe('API Tests', () => {
 	let offices = [];
