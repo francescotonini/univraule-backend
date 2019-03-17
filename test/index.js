@@ -1,13 +1,13 @@
-const assert = require('assert');
-const should = require('chai').should();
-const phin   = require('phin');
+const chai   = require('chai');
+const phin   = require('phin').unpromisified;
 const async  = require('async');
 
-const BASE_URL = process.env.BASE_URL || 'localhost:80';
+chai.should();
+
+const BASE_URL = process.env.BASE_URL || 'localhost:8080';
 
 describe('API Tests', () => {
 	let offices = [];
-
 	it('Should return a list of offices', (done) => {
 		phin({
 			url: `${BASE_URL}/offices`,
@@ -55,6 +55,68 @@ describe('API Tests', () => {
 
 				cb();
 			});
+		}, (err) => {
+			if (err) throw err;
+
+			done();
+		});
+	});
+
+	let courses = [];
+	it('Should return a list of courses', (done) => {
+		phin({
+			url: `${BASE_URL}/courses`,
+			method: 'GET',
+			parse: 'json'
+		}, (err, res) => {
+			if (err) throw err;
+
+			res.body.should.be.a('array');
+			courses = res.body;
+			courses.forEach((course) => {
+				course['name'].should.be.a('string');
+				course['academicYearId'].should.be.a('string');
+				course['id'].should.be.a('string');
+				course['years'].should.be.a('array');
+
+				course['years'].forEach((year) => {
+					year['name'].should.be.a('string');
+					year['id'].should.be.a('string');
+				});
+			});
+
+			done();
+		});
+	});
+
+	it('Should return a timetable for year in each course', (done) => {
+		async.eachSeries(courses, (course, cb) => {
+			async.eachSeries(course['years'], (year, cb) => {
+				let url = `${BASE_URL}/academicyear/${course['academicYearId']}/course/${course['id']}/year/${year['id']}/lessons`;
+				console.log(`Processing ${url}`);
+	
+				phin({
+					url: url,
+					method: 'GET',
+					parse: 'json'
+				}, (err, res) => {
+					if (err) {
+						cb(err);
+						return;
+					}
+	
+					res.body.should.be.a('array');
+					res.body.forEach((lesson) => {
+						lesson['name'].should.be.a('string');
+						lesson['teacher'].should.be.a('string');
+						lesson['startTimestamp'].should.be.a('number');
+						lesson['endTimestamp'].should.be.a('number');
+						lesson['teacher'].should.be.a('string');
+					});
+	
+					cb();
+				});
+			}, cb);
 		}, (err) => {
 			if (err) throw err;
 
