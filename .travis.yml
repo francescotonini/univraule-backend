@@ -1,7 +1,5 @@
+language: minimal
 sudo: required
-language: node_js
-node_js:
-  - 10.15.3
 services:
   - docker
 before_script:
@@ -9,14 +7,15 @@ before_script:
   - 'export IMAGE_TAG=$(date +%s)'
   - 'export IMAGE_NAME=francescotonini/univrorari-backend'
 script:
-  - 'docker build --force-rm=true --no-cache -t $IMAGE_NAME:$IMAGE_TAG .'
+  - 'docker build --force-rm=true --no-cache -t $IMAGE_NAME:$IMAGE_TAG -t $IMAGE_NAME:latest .'
 after_script:
   - 'docker images'
 before_deploy:
   - 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
-  - 'docker push $IMAGE_NAME:$IMAGE_TAG'
+  on:
+    branch: master
 deploy:
-  provider: script
-  script: 'echo TODO'
+  - 'docker push $IMAGE_NAME:$IMAGE_TAG'
+  - 'docker push $IMAGE_NAME:latest'
   on:
     branch: master
