@@ -7,13 +7,13 @@ services:
 before_script:
   - 'docker -v'
   - 'export IMAGE_TAG=$(date +%s)'
-  - 'export IMAGE_NAME=univrorari-backend'
+  - 'export IMAGE_NAME=francescotonini/univrorari-backend'
 script:
   - 'docker build --force-rm=true --no-cache -t $IMAGE_NAME:$IMAGE_TAG .'
 after_script:
   - 'docker images'
 before_deploy:
-  - 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+  - 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
   - 'docker push $IMAGE_NAME:$IMAGE_TAG'
 deploy:
   provider: script
