@@ -1,5 +1,8 @@
 language: minimal
 sudo: required
+branches:
+  only:
+  - master
 services:
   - docker
 before_script:
@@ -12,10 +15,6 @@ after_script:
   - 'docker images'
 before_deploy:
   - 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
-  on:
-    branch: master
 deploy:
   - 'docker push $IMAGE_NAME:$IMAGE_TAG'
   - 'docker push $IMAGE_NAME:latest'
-  on:
-    branch: master
