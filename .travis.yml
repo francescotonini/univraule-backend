@@ -1,5 +1,11 @@
 language: minimal
 sudo: required
+notifications:
+  slack:
+    rooms:
+	  - $SLACK_USERNAME:$SLACK_KEY#$SLACK_CHANNEL
+    on_success: always
+    on_failure: always
 services:
   - docker
 before_script:
