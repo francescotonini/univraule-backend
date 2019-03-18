@@ -6,7 +6,7 @@ services:
   - docker
 before_script:
   - 'docker -v'
-  - 'export IMAGE_TAG=$(date -Ins)'
+  - 'export IMAGE_TAG=$(date +%s)'
   - 'export IMAGE_NAME=univrorari-backend'
 script:
   - 'docker build --force-rm=true --no-cache -t $IMAGE_NAME:$IMAGE_TAG .'
