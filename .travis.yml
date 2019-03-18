@@ -1,0 +1,18 @@
+sudo: required
+services:
+  - docker
+before_script:
+  - 'docker -v'
+  - 'export IMAGE_TAG=$(date -Ins)'
+script:
+  - 'docker build --force-rm=true --no-cache -t $IMAGE_NAME:$IMAGE_TAG .'
+after_script:
+  - 'docker images'
+before_deploy:
+  - 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+  - 'docker push $IMAGE_NAME:$IMAGE_TAG'
+deploy:
+  provider: script
+  script: 'echo TODO'
+  on:
+    branch: master
