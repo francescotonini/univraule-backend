@@ -14,8 +14,6 @@ before_deploy:
   - 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
 deploy:
   provider: 'script'
-  script:
-    - 'docker push $IMAGE_NAME:$IMAGE_TAG'
-    - 'docker push $IMAGE_NAME:latest'
+  script: 'docker push $IMAGE_NAME:$IMAGE_TAG && docker push $IMAGE_NAME:latest'
   on:
     branch: master
