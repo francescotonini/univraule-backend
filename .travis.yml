@@ -1,0 +1,25 @@
+language: minimal
+sudo: required
+notifications:
+  slack:
+    rooms:
+	  - $SLACK_USERNAME:$SLACK_KEY#$SLACK_CHANNEL
+    on_success: always
+    on_failure: always
+services:
+  - docker
+before_script:
+  - 'docker -v'
+  - 'export IMAGE_TAG=$(date +%s)'
+  - 'export IMAGE_NAME=francescotonini/univrorari-backend'
+script:
+  - 'docker build --force-rm=true --no-cache -t $IMAGE_NAME:$IMAGE_TAG -t $IMAGE_NAME:latest .'
+after_script:
+  - 'docker images'
+before_deploy:
+  - 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+deploy:
+  provider: 'script'
+  script: 'docker push $IMAGE_NAME:$IMAGE_TAG && docker push $IMAGE_NAME:latest'
+  on:
+    branch: master

@@ -1,5 +1,9 @@
-# UniVR Orari - Backend
-This repository contains the backend source code of [UniVR Orari](https://github.com/francescotonini/univrorari-app) and [UniVR Aule](https://github.com/francescotonini/univraule)
+# UniVR Orari e Aule - Backend
+
+![Travis](https://travis-ci.org/francescotonini/univrorari-backend.svg?branch=master)
+
+This repository contains the backend source code of [UniVR Orari e Aule](https://github.com/francescotonini/univrorari-app), [UniVR Aule](https://github.com/francescotonini/univraule) and 
+[the Telegram bot for UniVR Aule](https://t.me/univraulebot)
 
 ## Endpoint documentation
 ### Get all courses
@@ -8,12 +12,12 @@ This repository contains the backend source code of [UniVR Orari](https://github
 ```json
 [
 	{
-		"name": "Nome corso",
+		"name": "{courseName}",
 		"academicYearId": "{academicYearId}",
 		"courseId": "{courseId}", 
 		"years": [
 			{
-				"name": "1 anno",
+				"name": "{yearName}",
 				"year": "{courseYearId}"
 			}
 		]
@@ -27,11 +31,11 @@ This repository contains the backend source code of [UniVR Orari](https://github
 ```json
 [
 	{
-		"name": "Nome lezione",
-		"teacher": "Docente",
-		"room": "Aula",
-		"startTimestamp": 1509697617,
-		"endTimpestamp": 1509697618
+		"name": "{lessonName}",
+		"teacher": "{teacher}",
+		"room": "{room}",
+		"startTimestamp": "1509697617000",
+		"endTimpestamp": "1509697618000"
 	}
 ]
 ```
@@ -42,7 +46,7 @@ This repository contains the backend source code of [UniVR Orari](https://github
 ```json
 [
 	{
-		"name": "Nome sede",
+		"name": "{officeName}",
 		"id": "{officeId}"
 	}
 ]
@@ -54,14 +58,16 @@ This repository contains the backend source code of [UniVR Orari](https://github
 ```json
 [
 	{
-		"name": "Nome aula",
+		"name": "{roomName}",
 		"events": [
 			{
-				"name": "Nome evento",
-				"startTimestamp": 1509697617,
-				"endTimestamp": 1509697618
+				"name": "{eventName}",
+				"startTimestamp": "1509697617000",
+				"endTimestamp": "1509697618000"
 			}
-		]
+		],
+		"isFree": "{true | false}",
+		"until": "1509697617000"
 	}
 ]
 ```
@@ -72,13 +78,9 @@ This repository contains the backend source code of [UniVR Orari](https://github
 ```json
 [
     {
-        "id": "999|1",
-        "teachings": [
-			{
-				"id": "EC111111",
-				"name": "Analisi matematica I"
-			}
-		]
-	}
+        "id": "{teachingId}",
+        "name": "{teachingName}",
+        "yearId": "{yearId}"
+    }
 ]
 ```
