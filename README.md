@@ -1,4 +1,7 @@
 # UniVR Orari e Aule - Backend
+
+![Travis](https://travis-ci.org/francescotonini/univrorari-backend.svg?branch=master)
+
 This repository contains the backend source code of [UniVR Orari e Aule](https://github.com/francescotonini/univrorari-app), [UniVR Aule](https://github.com/francescotonini/univraule) and 
 [the Telegram bot for UniVR Aule](https://t.me/univraulebot)
 
