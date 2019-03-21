@@ -4,7 +4,11 @@ const async  = require('async');
 
 chai.should();
 
-const BASE_URL = process.env.BASE_URL || 'localhost:8080';
+process.on('unhandledRejection', (reason, p) => {
+	throw new Error();
+});
+
+const BASE_URL = process.env.BASE_URL || 'http://localhost:8080/v1';
 
 describe('API Tests', () => {
 	let offices = [];
@@ -48,8 +52,8 @@ describe('API Tests', () => {
 					room['events'].should.be.a('array');
 					room['events'].forEach((event) => {
 						event['name'].should.be.a('string');
-						event['startTimestamp'].should.be.a('number');
-						event['endTimestamp'].should.be.a('number');
+						(+event['startTimestamp']).should.be.a('number');
+						(+event['endTimestamp']).should.be.a('number');
 					});
 				});
 
@@ -109,8 +113,8 @@ describe('API Tests', () => {
 					res.body.forEach((lesson) => {
 						lesson['name'].should.be.a('string');
 						lesson['teacher'].should.be.a('string');
-						lesson['startTimestamp'].should.be.a('number');
-						lesson['endTimestamp'].should.be.a('number');
+						(+lesson['startTimestamp']).should.be.a('number');
+						(+lesson['endTimestamp']).should.be.a('number');
 						lesson['teacher'].should.be.a('string');
 					});
 	
