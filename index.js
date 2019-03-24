@@ -6,6 +6,10 @@ bole.output([{ level: 'debug', stream: process.stdout }]);
 
 const logger = bole('index');
 
+process.on('unhandledRejection', (ex) => {
+	throw ex;
+});
+
 process.on('uncaughtException', (err) => {
 	logger.error(err['message']);
 	process.exit(1);
