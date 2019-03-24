@@ -1,7 +1,7 @@
 {
   "name": "univrorari-backend",
-  "version": "2.0.5",
-  "description": "Backend of univraule-app-android and univraule-bot",
+  "version": "2.1.0",
+  "description": "Backend of univrorari-app-android, univraule-app-android and univraule-bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -25,13 +25,12 @@
   "homepage": "https://github.com/francescotonini/univrorari-backend#readme",
   "dependencies": {
     "async": "^2.6.2",
+    "body-parser": "^1.18.3",
     "bole": "^3.0.2",
-    "koa": "^2.7.0",
-    "koa-json-error": "^3.1.2",
-    "koa-logger": "^3.2.0",
-    "koa-morgan": "^1.0.1",
-    "koa-router": "^7.4.0",
+    "compression": "^1.7.4",
+    "express": "^4.16.4",
     "moment-timezone": "^0.5.23",
+    "morgan": "^1.9.1",
     "phin": "^3.3.0"
   },
   "devDependencies": {
