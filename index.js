@@ -1,17 +1,12 @@
+const bole   = require('bole');
 const server = require('./lib/server.js');
-const bole  = require('bole');
 
-// Set logger
+// Initialize the logger
 bole.output([{ level: 'debug', stream: process.stdout }]);
 
 const logger = bole('index');
-
-process.on('unhandledRejection', (ex) => {
-	throw ex;
-});
-
 process.on('uncaughtException', (err) => {
-	logger.error(err['message']);
+	logger.error(err);
 	process.exit(1);
 });
 
