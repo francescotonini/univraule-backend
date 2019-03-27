@@ -1,6 +1,6 @@
 {
   "name": "univrorari-backend",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Backend of univrorari-app-android, univraule-app-android and univraule-bot",
   "main": "index.js",
   "scripts": {
