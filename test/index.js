@@ -93,6 +93,37 @@ describe('API Tests', () => {
 		});
 	});
 
+	it('Should return a list of teachings for each course', (done) => {
+		async.eachSeries(courses, (course, cb) => {
+			let url = `${BASE_URL}/academicyear/${course['academicYearId']}/course/${course['id']}/teachings`;
+			console.log(`Processing ${url}`);
+
+			phin({
+				url: url,
+				method: 'GET',
+				parse: 'json'
+			}, (err, res) => {
+				if (err) {
+					cb(err);
+					return;
+				}
+
+				res.body.should.be.a('array');
+				res.body.forEach((lesson) => {
+					lesson['id'].should.be.a('string');
+					lesson['name'].should.be.a('string');
+					lesson['yearId'].should.be.a('string');
+				});
+
+				cb();
+			});
+		}, (err) => {
+			if (err) throw err;
+
+			done();
+		});
+	});
+
 	it('Should return a timetable for year in each course', (done) => {
 		async.eachSeries(courses, (course, cb) => {
 			async.eachSeries(course['years'], (year, cb) => {
@@ -121,6 +152,37 @@ describe('API Tests', () => {
 					cb();
 				});
 			}, cb);
+		}, (err) => {
+			if (err) throw err;
+
+			done();
+		});
+	});
+
+	it('Should return a list of teachings for each course', (done) => {
+		async.eachSeries(courses, (course, cb) => {
+			let url = `${BASE_URL}/academicyear/${course['academicYearId']}/course/${course['id']}/teachings`;
+			console.log(`Processing ${url}`);
+
+			phin({
+				url: url,
+				method: 'GET',
+				parse: 'json'
+			}, (err, res) => {
+				if (err) {
+					cb(err);
+					return;
+				}
+
+				res.body.should.be.a('array');
+				res.body.forEach((lesson) => {
+					lesson['id'].should.be.a('string');
+					lesson['name'].should.be.a('string');
+					lesson['yearId'].should.be.a('string');
+				});
+
+				cb();
+			});
 		}, (err) => {
 			if (err) throw err;
 
