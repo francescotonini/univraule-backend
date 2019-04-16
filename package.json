@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "cross-env NODE_ENV=development node --inspect index.js | bistre",
+    "dev": "cross-env NODE_ENV=development node --inspect index.js",
     "lint": "eslint lib",
     "test": "mocha --opts ./test/mocha.opts"
   },
@@ -29,6 +29,7 @@
     "body-parser": "^1.18.3",
     "compression": "^1.7.4",
     "express": "^4.16.4",
+    "memory-cache": "^0.2.0",
     "moment-timezone": "^0.5.23",
     "morgan": "^1.9.1",
     "phin": "^3.3.0"
