@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/francescotonini/univrorari-backend#readme",
   "dependencies": {
+    "@timberio/node": "^0.33.0",
     "async": "^2.6.2",
     "body-parser": "^1.18.3",
-    "bole": "^3.0.2",
     "compression": "^1.7.4",
     "express": "^4.16.4",
     "moment-timezone": "^0.5.23",
@@ -34,7 +34,6 @@
     "phin": "^3.3.0"
   },
   "devDependencies": {
-    "bistre": "^1.0.1",
     "chai": "^4.2.0",
     "cross-env": "^5.1.1",
     "eslint": "^4.10.0",

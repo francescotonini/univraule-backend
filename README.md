@@ -5,6 +5,8 @@
 This repository contains the backend source code of [UniVR Orari e Aule](https://github.com/francescotonini/univrorari-app), [UniVR Aule](https://github.com/francescotonini/univraule) and 
 [the Telegram bot for UniVR Aule](https://t.me/univraulebot)
 
+In order to run this backend, sets both `TIMBER_API_KEY` and `TIMBER_SOURCE_ID` as env vars.
+
 ## Endpoint documentation
 ### Get all courses
 `GET /courses`
