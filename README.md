@@ -16,7 +16,7 @@ In order to run this backend, sets both `TIMBER_API_KEY` and `TIMBER_SOURCE_ID` 
 	{
 		"name": "{courseName}",
 		"academicYearId": "{academicYearId}",
-		"courseId": "{courseId}", 
+		"courseId": "{courseId}",
 		"years": [
 			{
 				"name": "{yearName}",
