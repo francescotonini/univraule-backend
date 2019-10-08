@@ -1,47 +1,11 @@
-# UniVR Orari e Aule - Backend
+# UniVR Aule - Backend
 
-![Travis](https://travis-ci.org/francescotonini/univrorari-backend.svg?branch=master)
+This repository contains the backend source code of [UniVR Aule](https://github.com/francescotonini/univraule), 
+[the Telegram bot](https://t.me/univraulebot) and the Alexa Skill UniVR Aule
 
-This repository contains the backend source code of [UniVR Orari e Aule](https://github.com/francescotonini/univrorari-app), [UniVR Aule](https://github.com/francescotonini/univraule) and 
-[the Telegram bot for UniVR Aule](https://t.me/univraulebot)
-
-In order to run this backend, sets both `TIMBER_API_KEY` and `TIMBER_SOURCE_ID` as env vars.
+If you want to use Timber, sets both `TIMBER_API_KEY` and `TIMBER_SOURCE_ID` as env vars.
 
 ## Endpoint documentation
-### Get all courses
-`GET /courses`
-
-```json
-[
-	{
-		"name": "{courseName}",
-		"academicYearId": "{academicYearId}",
-		"courseId": "{courseId}",
-		"years": [
-			{
-				"name": "{yearName}",
-				"year": "{courseYearId}"
-			}
-		]
-	}
-]
-```
-
-### Get lessons
-`GET /academicyear/{academicYearId}/course/{courseId}/year/{courseYearId}/lessons?[year={year}&month={month}]`
-
-```json
-[
-	{
-		"name": "{lessonName}",
-		"teacher": "{teacher}",
-		"room": "{room}",
-		"startTimestamp": "1509697617000",
-		"endTimpestamp": "1509697618000"
-	}
-]
-```
-
 ### Get offices
 `GET /offices`
 
@@ -74,7 +38,6 @@ In order to run this backend, sets both `TIMBER_API_KEY` and `TIMBER_SOURCE_ID` 
 ]
 ```
 
-### Get teachings
 `GET /academicyear/{academicYearId}/course/{courseId}/teachings`
 
 ```json
