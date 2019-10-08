@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "cross-env NODE_ENV=development node --inspect index.js",
-    "lint": "eslint lib",
+    "lint": "eslint lib --fix",
     "test": "mocha --opts ./test/mocha.opts"
   },
   "repository": {
@@ -26,6 +26,7 @@
   "dependencies": {
     "@timberio/node": "^0.33.0",
     "@timberio/winston": "^0.33.0",
+    "alexa-verifier-middleware": "^1.0.2",
     "async": "^2.6.2",
     "body-parser": "^1.18.3",
     "compression": "^1.7.4",
