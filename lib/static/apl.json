@@ -160,13 +160,12 @@
                             },
                             {
                                 "type": "Sequence",
-                                "grow": 1,
                                 "height": "80vh",
-                                "scrollDirection": "vertical",
                                 "paddingLeft": "@marginLeft",
                                 "paddingRight": "@marginRight",
                                 "data": "${listData}",
                                 "numbered": true,
+                                "scrollDirection": "vertical",
                                 "items": [
                                     {
                                         "type": "VerticalListItem",
@@ -174,7 +173,8 @@
                                         "secondaryText": "${data.textContent.secondaryText.text}",
                                         "tertiaryText": "${data.textContent.tertiaryText.text}"
                                     }
-                                ]
+                                ],
+                                "grow": 1
                             }
                         ]
                     }
@@ -196,19 +196,25 @@
                         "alignItems": "center",
                         "items": [
                             {
+                                "type": "Text",
+                                "text": "${ordinal}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            },
+                            {
                                 "type": "Container",
                                 "direction": "column",
                                 "spacing": 25,
                                 "items": [
                                     {
                                         "type": "Text",
-                                        "style": "textStyleDetail",
-                                        "textAlign": "auto",
-                                        "maxLines": 1,
                                         "text": "${primaryText}",
-                                        "fontWeight": "300",
+                                        "style": "textStyleDetail",
                                         "grow": 1,
-                                        "shrink": 1
+                                        "shrink": 1,
+                                        "fontWeight": "300",
+                                        "maxLines": 1
                                     },
                                     {
                                         "type": "Text",
@@ -239,6 +245,13 @@
                         "width": 800,
                         "alignItems": "center",
                         "items": [
+                            {
+                                "type": "Text",
+                                "text": "${ordinal}",
+                                "paddingBottom": "20dp",
+                                "color": "white",
+                                "spacing": "5dp"
+                            },
                             {
                                 "type": "Container",
                                 "spacing": 30,
@@ -285,9 +298,9 @@
             ],
             "item": [
                 {
+                    "type": "ListTemplate1",
                     "title": "Aule libere UniVR Informatica",
-                    "listData": "${payload.listTemplate1ListData.listPage.listItems}",
-                    "type": "ListTemplate1"
+                    "listData": "${payload.listTemplate1ListData.listPage.listItems}"
                 }
             ]
         }
