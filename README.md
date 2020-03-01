@@ -1,3 +1,5 @@
+**This repo has been archived and it's not been used in production anymore**
+
 # UniVR Aule - Backend
 
 This repository contains the backend source code of [UniVR Aule](https://github.com/francescotonini/univraule), 
